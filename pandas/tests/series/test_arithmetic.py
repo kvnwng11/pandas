@@ -374,9 +374,9 @@ class TestSeriesArithmetic:
         td_series = pd.Series(np.random.rand(5) * timedelta(hours=1))
         other = pd.Series(np.random.rand(5) < 0.5)
 
-        pandas_types = ('Int8', 'Int16', 'Int32', 'Int64', 'UInt8', 'UInt16', 'UInt32', 'UInt64', 'Float32', 'Float64', 'boolean')
-        numpy_types = ('int8', 'int16', 'int32', 'int64', 'uint8', 'uint16', 'uint32', 'uint64', 'float32', 'float64', 'bool')
-
+        pandas_types = ['Int8', 'Int16', 'Int32', 'Int64', 'UInt8', 'UInt16', 'UInt32', 'UInt64', 'Float32', 'Float64', 'boolean']
+        numpy_types = ['int8', 'int16', 'int32', 'int64', 'uint8', 'uint16', 'uint32', 'uint64', 'float32', 'float64', 'bool']
+        
         for dtype1, dtype2 in zip(pandas_types, numpy_types):
             result = td_series * other.astype(dtype1)
             expected = td_series * other.astype(dtype2)
